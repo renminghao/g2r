@@ -1,0 +1,36 @@
+{
+  "name": "g2r",
+  "version": "1.0.0",
+  "description": "将gitbook中的内容and目录结构等自动转换到readme中",
+  "main": "./dist/index.js",
+  "scripts": {
+    "dev": "gulp && node ./dist/index.js",
+    "build": "gulp"
+  },
+  "bin": {
+    "g2r": "./bin/g2r"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:renminghao/g2r.git"
+  },
+  "keywords": [
+    "gitbook",
+    "readme"
+  ],
+  "author": "renminghao",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.16.0",
+    "commander": "^2.9.0",
+    "node-readme": "^0.1.9",
+    "optimist": "^0.6.1"
+  }
+}

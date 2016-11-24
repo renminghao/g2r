@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+var arg = require('optimist').argv;
+var pkg = require('../package.json');
+var program = require('commander');
+var g2r = require('../dist/g2r.js');
+var color = require('colors')
+
+program
+	.version(pkg.version)
+	.option('-g, --gitbook', 'gitbook dir')
+	.option('-r, --readme', 'readme dir')
+	.parse(process.argv)
+
+var getArg = str => arg[str];
+
+var gdir = getArg('g') || './';
+var rdir = getArg('r') || './';
+
+console.log(`gitbook工程地址为\n${gdir}`.green)
+console.log(`readme工程地址为\n${rdir}`.green)
+
+g2r.default(gdir, rdir).then().catch(e=>console.log(e))
